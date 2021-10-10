@@ -1,31 +1,6 @@
-import {useState, useEffect} from 'react';
 import './users.css';
 
-export default function Users(){
-
-
-    const [list, setList] = useState([]);
-
-
-    async function getData(){
-        let seed = 'deje0014';
-        let nat = 'au,ca,nz,gb,us';
-        let qty = 20;
-        let url = `https://randomuser.me/api/?seed=${seed}&format=json&${nat}&results=${qty}`;;
-
-        fetch(url)
-        .then(resp=> resp.json())
-        .then(data => {
-            console.log(data.results);
-          setList(data.results)
-        })
-        .catch(error => console.log(error))
-    }
-
-    useEffect(()=>{
-        getData();
-    }, [])
-
+export default function Users({list}){
 
     return (
         <div className='users'>

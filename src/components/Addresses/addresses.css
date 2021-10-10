@@ -1,0 +1,9 @@
+.address-list{
+    padding-left: 2rem;
+}
+
+.user-info{
+    display: flex;
+    gap: 2rem;
+}
+
