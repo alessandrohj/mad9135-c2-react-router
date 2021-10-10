@@ -1,0 +1,32 @@
+.users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem;
+    padding-left: 1rem;
+}
+
+.user-card{
+    display: flex;
+    flex-direction: column;
+    flex-grow: initial;
+    flex-basis: auto;
+    border: 1px solid black;
+    cursor: pointer;
+    text-align: center;
+    background-color: bisque;
+    padding: 1rem;
+}
+
+.user-card:hover,
+.user-cardL:active{
+    transform: scale(1.05);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.6s;
+}
+
+img{
+    border-radius: 50%;
+    border: 2px rgb(0, 0, 0) solid;
+    margin-bottom: 1rem;
+}
