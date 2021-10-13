@@ -20,7 +20,6 @@ function App() {
       fetch(url)
       .then(resp=> resp.json())
       .then(data => {
-          console.log(data.results);
         setList(data.results)
       })
       .catch(error => console.log(error))
