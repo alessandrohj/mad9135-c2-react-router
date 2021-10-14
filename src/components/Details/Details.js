@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import './details.css'
 
 
 export default function Details(props){
@@ -12,22 +13,24 @@ export default function Details(props){
     })
     console.log(user);
 
+
+
     return(
         <>
-        <h2>{user.name.first}</h2>
-        <img src={user.picture.large} alt={user.name.last}></img>
-        <p className='address'>{user.location.street.number} {user.location.street.name}, {user.location.city}, {user.location.state}, {user.location.country}</p>
-        <div className='login-info'>
-           <span><h3>UUID:</h3>
-            <p>{user.login.uuid}</p>
+        <h2 className='font-bold text-xl pb-2'>{user && user.name.first}</h2>
+        <img src={user && user.picture.large} alt={user && user.name.last} className='mb-2 border rounded border-black'/>
+        <p className='address'>{user && user.location.street.number} {user && user.location.street.name}, {user && user.location.city}, {user && user.location.state}, {user && user.location.country}</p>
+        <div className='login-info my-4'>
+           <span><h3 className='font-bold'>UUID:</h3>
+            <p>{user && user.login.uuid}</p>
             </span> 
             <span>
-            <h3>Username:</h3>
-            <p>{user.login.username}</p>
+            <h3 className='font-bold my-1'>Username:</h3>
+            <p>{user && user.login.username}</p>
             </span> 
-            <h3>Password:</h3>
+            <h3 className='font-bold my-1'>Password:</h3>
             <span>
-            <p>{user.login.password}</p>
+            <p>{user && user.login.password}</p>
             </span> 
         </div>
         </>
