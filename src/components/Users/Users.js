@@ -6,22 +6,6 @@ import './users.css';
 export default function Users({list}){
 
     let modal = document.getElementById('user-details');
-
-    // const [clicked, setClicked] = useState('none');
-    // const myRef = useRef();
-    
-    // const handleClick = (ev)=>{
-    //     if(!myRef.current.contains(ev.target)){
-    //         setClicked('block');
-    //     }
-    // }
-    // const handleClickInside = () => setClicked('none');
-
-    // useEffect(()=>{
-    //     document.addEventListener('click', handleClick)
-    //     return ()=> document.removeEventListener('click', handleClick)
-    // })
-
     function handleClickInside(){
         modal.style.display = 'block';
     }

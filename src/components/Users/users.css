@@ -24,6 +24,7 @@
 .user-cardL:active{
     transform: scale(1.05);
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.6s;
+    background-color:rgb(176, 255, 139);
 }
 
 .user-image{
