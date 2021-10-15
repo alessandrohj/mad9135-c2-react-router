@@ -1,10 +1,21 @@
-
+import {Route, NavLink} from 'react-router-dom';
+import Details from '../Details/Details';
 import './addresses.css'
 
 export default function Addresses({list}){
 
-
+    let modal = document.getElementById('user-details2');
     let sortedData;
+
+    function findUser(id){
+        let user = list.find((item, index)=> id == index+1)
+        console.log(user);
+        return user;
+    }
+
+    function handleClickInside(){
+        modal.style.display = 'block';
+    }
 
   function sortData(data){
     sortedData = data.sort((a,b)=>{
@@ -36,6 +47,7 @@ export default function Addresses({list}){
                 <th className={thClass}>State</th>
                 <th className={thClass}>Country</th>
                 <th className={thClass}>Name</th>
+                <th className={thClass}>Details</th>
             </tr>
             ))
         }
@@ -49,12 +61,23 @@ export default function Addresses({list}){
                         <td className={tdClass}>{location.state}</td>
                         <td className={tdClass}>{location.country}</td>
                         <td className={tdClass}>{name.first} {name.last}</td>
+                        <td className={tdClass} onClick={handleClickInside}><NavLink to={`/address/${index+1}`}>Link</NavLink></td>
                     </tr>
               ))
             }
             </tbody>
 		</table>
 	</div>
+    <div className='user-details' id='user-details2'>
+               <div className='user-details-content'>
+               <span className="close" onClick={()=>(
+                    modal.style.display = 'none'
+                )}>&times;</span>
+            <Route path="/address/:id">
+            <Details findUser={findUser}/>
+            </Route>
+            </div>
+            </div>
 </div>
 
 

@@ -1,5 +1,4 @@
 import {NavLink, Route} from 'react-router-dom';
-// import { useState, useEffect, useRef } from 'react';
 import Details from '../Details/Details';
 import './users.css';
 
