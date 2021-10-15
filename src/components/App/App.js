@@ -49,7 +49,7 @@ function App() {
         </Route>
         <Route path="/404" render={()=>{
           return(
-          <p>Page not found</p>
+          <h1 className="font-bold text-3xl p-3">Page not found.</h1>
           )
         }}>
 
