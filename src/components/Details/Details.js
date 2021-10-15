@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Loading from '../Loading/Loading';
 import './details.css'
 
 
@@ -17,6 +18,7 @@ export default function Details(props){
 
     return(
         <>
+          {id.length <= 0 && <Loading/>}
         <h2 className='font-bold text-xl pb-2'>{user && user.name.first}</h2>
         <img src={user && user.picture.large} alt={user && user.name.last} className='mb-2 border rounded border-black'/>
         <p className='address'>{user && user.location.street.number} {user && user.location.street.name}, {user && user.location.city}, {user && user.location.state}, {user && user.location.country}</p>

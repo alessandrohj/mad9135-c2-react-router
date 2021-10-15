@@ -5,9 +5,11 @@
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.6s;
     background-color:rgb(176, 255, 139);
     font-weight: bold;
-    cursor: pointer;
 }
 
+Navlink{
+  cursor: pointer;
+}
 
 
 @media (min-width: 640px) {

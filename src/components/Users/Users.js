@@ -1,5 +1,6 @@
 import {NavLink, Route} from 'react-router-dom';
 import Details from '../Details/Details';
+import Loading from '../Loading/Loading';
 import './users.css';
 
 export default function Users({list}){
@@ -35,6 +36,7 @@ export default function Users({list}){
                    </NavLink>
                ))
            }
+           {list.length <= 0 && <Loading/>}
            <div className='user-details' id='user-details'>
                <div className='user-details-content'>
                <span className="close" onClick={()=>(
