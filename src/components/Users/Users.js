@@ -10,10 +10,6 @@ export default function Users({list}){
         modal.style.display = 'block';
     }
 
-    function handleClickOutside(){
-        modal.style.display = 'none'
-    }
-
     function findUser(id){
         let user = list.find((item, index)=> id == index+1)
         console.log(user);
